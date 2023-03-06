@@ -18,6 +18,7 @@ const MSG = {
   YOUR_NUMBER: { en: "Your number is: ", pl: "Twoja liczba to: " },
   LANGUAGE: { en: "Language", pl: "Język" },
   LEVEL: { en: "Level", pl: "Poziom" },
+  WRONG:{en:"You've made a mistake or you are cheating.", pl:"Coś poszło nie tak, albo oszukujesz."}
 }
 function msg(code) {
   return MSG[code][languages[currentLang]]
@@ -111,7 +112,11 @@ function renderGame() {
       document.getElementById("game").innerHTML = `<h3>${msg("IS_HERE")}</h3><p class="p">${card(stage)}</p>`
       document.getElementById("buttons").innerHTML = yesBtn() + noBtn()
     } else {
-      document.getElementById("game").innerHTML = `<h3>${msg("YOUR_NUMBER")}${result}</h3>`
+      if (result<1 || result>levels[currentLevel].max) {
+        document.getElementById("game").innerHTML = `<h3>${msg("WRONG")}</h3>`
+      } else {
+        document.getElementById("game").innerHTML = `<h3>${msg("YOUR_NUMBER")}${result}</h3>`
+      }
       document.getElementById("buttons").innerHTML = ""
     }
   document.getElementById("new").text = msg("NEW_GAME")
@@ -122,6 +127,9 @@ function next(yes) {
     result += (1 << stage)
   }
   stage++
+  if (result+ (1<<stage) > levels[currentLevel].max) {
+    stage++
+  }
   renderGame()
 }
 
