@@ -1,0 +1,153 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: green;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .btn {
+      border: none;
+      /* Remove borders */
+      color: white;
+      /* Add a text color */
+      padding: 14px 28px;
+      /* Add some padding */
+      cursor: pointer;
+      /* Add a pointer cursor on mouse-over */
+    }
+
+    .success {
+      background-color: #04AA6D;
+    }
+
+    /* Green */
+    .success:hover {
+      background-color: #46a049;
+    }
+
+    .info {
+      background-color: #2196F3;
+    }
+
+    /* Blue */
+    .info:hover {
+      background: #0b7dda;
+    }
+
+    .warning {
+      background-color: #ff9800;
+    }
+
+    /* Orange */
+    .warning:hover {
+      background: #e68a00;
+    }
+
+    .danger {
+      background-color: #f44336;
+    }
+
+    /* Red */
+    .danger:hover {
+      background: #da190b;
+    }
+
+    .default {
+      background-color: #e7e7e7;
+      color: black;
+    }
+
+    /* Gray */
+    .default:hover {
+      background: #ddd;
+    }
+
+    .p {
+      font-family: monospace;
+      font-weight: bold;
+      font-size: large;
+    }
+  </style>
+</head>
+
+
+<body onhashchange="onHashChange()">
+  <div class="navbar">
+    <a id="new" href="#home" onclick="init()">New game</a>
+    <div id="levels" class="dropdown"></div>
+    <div id="languages" class="dropdown"> </div>
+  </div>
+  <div id="game"></div>
+  <div id="buttons"> </div><br/>
+  <div id="progress"></div>
+  <script src="./magic.js"></script>
+
+</body>
+
+</html>
