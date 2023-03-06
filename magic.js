@@ -36,7 +36,6 @@ function card(nr) {
       result.push(pad(i, 4))
     }
   }
-  // result.sort((a,b)=>{ return  a%10 == b%10 ? Math.floor(a/10)-Math.floor(b/10) : (a%10) - (b%10)})
   return result.join(" ")
 }
 let cards = ""
@@ -47,11 +46,9 @@ function yesBtn() {
 function noBtn() {
   return `<button class="btn danger" onclick="next(0)">${msg("NO")}</button>\n`
 }
-function newGameBtn() {
-  return `<button class="btn info" onclick="init()">${msg("NEW_GAME")}</button>\n`
-}
+
 function startBtn() {
-  return `<button class="btn info" onclick="start()">${msg("START")}</button>\n`
+  return `<button class="btn success" onclick="start()">${msg("START")}</button>\n`
 }
 function thinkTxt(max) {
   return `<h2>${msg("THINK")}${max}</h2>`
