@@ -1,0 +1,2 @@
+# magic
+Number guessing game
