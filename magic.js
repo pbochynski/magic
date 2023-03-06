@@ -127,7 +127,7 @@ function next(yes) {
     result += (1 << stage)
   }
   stage++
-  if (result+ (1<<stage) > levels[currentLevel].max) {
+  if (stage<levels[currentLevel].stages && result+ (1<<stage) > levels[currentLevel].max) {
     stage++
   }
   renderGame()
